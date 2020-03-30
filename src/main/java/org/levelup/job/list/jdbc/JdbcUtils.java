@@ -10,8 +10,7 @@ public class JdbcUtils {
         Connection connection = DriverManager.getConnection(
                 "jdbc:postgresql://localhost:5432/jobs_list",
                 "postgres",
-                "root"
-        );
+                "root");
         return connection;
     }
 }
