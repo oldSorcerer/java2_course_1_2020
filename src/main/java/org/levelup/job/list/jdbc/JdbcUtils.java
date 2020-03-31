@@ -11,7 +11,6 @@ public class JdbcUtils {
                 "jdbc:postgresql://localhost:5432/jobs_list",
                 "postgres",
                 "root");
-        
         return connection;
     }
 }

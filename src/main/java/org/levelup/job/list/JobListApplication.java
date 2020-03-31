@@ -11,7 +11,7 @@ public class JobListApplication {
         JdbcJobListServise servise = new JdbcJobListServise();
 
         for (int i = 0; i < 10; i++) {
-            servise.createPosition("Devel" + i);
+            servise.createPosition("Delop5052 " + i);
         }
         System.out.println();
 
@@ -21,9 +21,11 @@ public class JobListApplication {
         }
         System.out.println();
 
-        Collection<Position> likePositions = servise.findPositionWithNameLike("Devel%");
+        Collection<Position> likePositions = servise.findPositionWithNameLike("Java%");
         for (Position position : likePositions) {
             System.out.println(position.getId() + " " + position.getName());
         }
+
+
     }
 }

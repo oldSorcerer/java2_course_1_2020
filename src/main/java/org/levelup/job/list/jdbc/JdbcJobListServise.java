@@ -19,7 +19,7 @@ public class JdbcJobListServise {
         System.out.println("Колличество добавленных строк: " + rowChanged);
 
         Statement selectStatement = connection.createStatement();
-        ResultSet resultSet = selectStatement.executeQuery("select * from positions  where name = '" + name + "'"); //select
+        ResultSet resultSet = selectStatement.executeQuery("select * from positions where name = '" + name + "'"); //select
 
         resultSet.next();
         int id = resultSet.getInt(1);
@@ -33,7 +33,6 @@ public class JdbcJobListServise {
         try (Connection connection = JdbcUtils.getConnection()) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from positions");
-
             return extractPositions(resultSet);
         }
     }
@@ -43,7 +42,6 @@ public class JdbcJobListServise {
             PreparedStatement statement = connection.prepareStatement("select * from  positions where name like ?");
             statement.setString(1, name);
             ResultSet resultSet = statement.executeQuery();
-
             return extractPositions(resultSet);
         }
     }
@@ -53,7 +51,6 @@ public class JdbcJobListServise {
         while (resultSet.next()) {
             int id = resultSet.getInt("id");
             String name = resultSet.getString("name");
-
             positions.add(new Position(id, name));
         }
         return positions;
