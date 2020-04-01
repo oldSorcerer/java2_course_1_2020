@@ -13,7 +13,7 @@ class UserJdbcServiseTest {
         UserJdbcServise servise = new UserJdbcServise();
 
         for (int i = 0; i < 10; i++) {
-            servise.createUser("Ivatn" + i, "Ivanotv " + i + 25, "00 000 458 " + i + 50);
+            servise.createUser("Iervattrun" + i, "Ivanewodretv " + i + 25, "025 058 45000 458 " + i + 50);
         }
         System.out.println();
 

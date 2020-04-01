@@ -19,7 +19,7 @@ public class UserJdbcServise implements UserService {
             System.out.println("Колличество добавленных строк: " + rowChanged);
 
             Statement selectStatement = connection.createStatement();
-            ResultSet resultSet = selectStatement.executeQuery("select * from users where  " ); //select
+            ResultSet resultSet = selectStatement.executeQuery("select * from users where passport = '" + passport + "'" ); //select
 
             resultSet.next();
             int id = resultSet.getInt(1);
@@ -61,7 +61,7 @@ public class UserJdbcServise implements UserService {
     public Collection<User> findByLastName(String lastName) throws SQLException {
         try(Connection connection = JdbcUtils.getConnection()) {
             PreparedStatement statement = connection.prepareStatement("select * from users where  last_name = ?");
-            statement.setString(2, lastName);
+            statement.setString(1, lastName);
             ResultSet resultSet = statement.executeQuery();
             return extractUsers(resultSet);
         }
@@ -73,7 +73,7 @@ public class UserJdbcServise implements UserService {
             PreparedStatement statement = connection.prepareStatement("delete from userss where passport = ?");
             statement.setString(1, passport);
             int rowDeleted = statement.executeUpdate();
-            System.out.println("Удалено позиций " + rowDeleted);
+            System.out.println("Удалено позиций: " + rowDeleted);
         }
 
     }

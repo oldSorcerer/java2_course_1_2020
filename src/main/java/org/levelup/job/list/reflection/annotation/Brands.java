@@ -8,6 +8,4 @@ public enum Brands {
     AUDI,
     VOLVO,
     LEXUS
-
-
 }

@@ -45,7 +45,7 @@ public class PositionJdbcServise implements PositionService {
             PreparedStatement statement = connection.prepareStatement("delete from positions where name = ?");
             statement.setString(1, name);
             int rowDeleted = statement.executeUpdate();
-            System.out.println("Удалено позиций " + rowDeleted);
+            System.out.println("Удалено позиций: " + rowDeleted);
         }
     }
 
