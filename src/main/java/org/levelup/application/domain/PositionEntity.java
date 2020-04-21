@@ -18,6 +18,7 @@ public class PositionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(unique = true)
     private String name;
 
     @ManyToMany(mappedBy = "positions", fetch = FetchType.EAGER)

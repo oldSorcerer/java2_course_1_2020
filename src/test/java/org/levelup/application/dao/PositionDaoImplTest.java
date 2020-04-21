@@ -4,7 +4,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.levelup.application.domain.PositionEntity;
 import org.mockito.*;
 
@@ -52,7 +51,6 @@ class PositionDaoImplTest {
         verify(session).persist(ArgumentMatchers.any(PositionEntity.class));
         verify(transaction, Mockito.times(1)).commit();
         verify(session).close();
-
     }
 
     @AfterEach
