@@ -1,4 +1,4 @@
-package org.levelup.lessons;
+package org.levelup.lesson;
 
 public class Animal {
     public int id;

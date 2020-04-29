@@ -1,4 +1,4 @@
-package org.levelup.lessons;
+package org.levelup.lesson;
 
 import java.io.File;
 import java.lang.annotation.ElementType;
@@ -32,7 +32,6 @@ public class Person {
         String author() default "Neil";
         int dateOfCreation() default 2019;
         String purpose();
-
     }
 
     public static class Search {

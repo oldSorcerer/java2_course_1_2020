@@ -1,4 +1,4 @@
-package org.levelup.lessons;
+package org.levelup.lesson;
 
 public class Car {
     private int number;

@@ -1,4 +1,4 @@
-package org.levelup.lessons;
+package org.levelup.lesson;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
@@ -11,7 +11,11 @@ public class ClassFinder {
     }
 
     private static void findClassesInPackage(String packageName) {
-        String pathToPackage = ClassFinder.class.getResource("").toString().substring(6).replace("/", "\\") + packageName.replace(".", "\\");
+        String pathToPackage = ClassFinder.class
+                .getResource("")
+                .toString()
+                .substring(6)
+                .replace("/", "\\") + packageName.replace(".", "\\");
         File packageDir = new File(pathToPackage);
         if (!packageDir.exists()) {
             System.out.println("Package does not exist or is empty.");
@@ -27,9 +31,9 @@ public class ClassFinder {
         }
         Class<?> classFromFile;
         for (File file : codeFiles) {
-            if (file.isDirectory()) {
+            if (file.isDirectory())
                 findClassesInDirectory(file);
-            } else if (file.isFile() && file.getAbsolutePath().endsWith(".class")) {
+            else if (file.isFile() && file.getAbsolutePath().endsWith(".class")) {
                 String className = file.getAbsolutePath().substring(
                         ClassFinder.class.getResource("")
                                 .toString().substring(6).replace("/", "\\").length(),
